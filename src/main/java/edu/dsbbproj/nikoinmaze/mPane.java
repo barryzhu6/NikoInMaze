@@ -69,44 +69,60 @@ public class mPane extends AnchorPane {
             3 for path
             */
             if ( newValue.intValue() == 0) {
-                setStyle("-fx-background-color:#ccccff;"+
-                        "-fx-border-color:#696969;"+
-                        "-fx-border-width:2;");
-                colorAdjust.setHue(0);
+                if (attacked.get()){
+                    setStyle("-fx-background-color:#ccccff;"+
+                            "-fx-border-color:#ff6600;"+
+                            "-fx-border-width:2;");
+                } else {
+                    setStyle("-fx-background-color:#ccccff;" +
+                            "-fx-border-color:#696969;" +
+                            "-fx-border-width:2;");
+                }
             }
-            if (newValue.intValue() == 1) colorAdjust.setHue(0.8);
+            if (newValue.intValue() == 1) {
+                if (attacked.get()){
+                    setStyle("-fx-background-color:#696969;"+
+                            "-fx-border-color:#ff6600;"+
+                            "-fx-border-width:2;");
+                } else {
+                    setStyle("-fx-background-color:#696969;" +
+                            "-fx-border-color:#696969;" +
+                            "-fx-border-width:2;");
+                }
+            }
             if (newValue.intValue() == 2) {
                 ImageView niko = new ImageView();
                 niko.setSmooth(true);
                 niko.setImage(new Image("niko.png"));
-                niko.setFitWidth(1);
-                niko.setFitHeight(1);
+                niko.setFitWidth(4);
+                niko.setFitHeight(4);
                 if (n < 50 || m < 50) {
                     niko.fitHeightProperty().bind(height.multiply(0.8));
                     niko.fitWidthProperty().bind(height.multiply(0.8));
                 }
                 stackPane.getChildren().add(niko);
-                setStyle("-fx-background-color:#FFD700;"+
-                        "-fx-border-color:#EEEEEE;"+
-                        "-fx-border-width:2;");
+                if (attacked.get()){
+                    setStyle("-fx-background-color:#FFD700;"+
+                            "-fx-border-color:#ff6600;"+
+                            "-fx-border-width:2;");
+                } else {
+                    setStyle("-fx-background-color:#FFD700;" +
+                            "-fx-border-color:#EEEEEE;" +
+                            "-fx-border-width:2;");
+                }
             }
             if (newValue.intValue() == 3) {
-                setStyle("-fx-background-color:#FFD700;"+
-                        "-fx-border-color:#EEEEEE;"+
-                        "-fx-border-width:2;");
+                if (attacked.get()){
+                    setStyle("-fx-background-color:#FFD700;"+
+                            "-fx-border-color:#ff6600;"+
+                            "-fx-border-width:2;");
+                } else {
+                    setStyle("-fx-background-color:#FFD700;" +
+                            "-fx-border-color:#EEEEEE;" +
+                            "-fx-border-width:2;");
+                }
             }
         });
-
-        attacked.addListener(((observable, oldValue, newValue) -> {
-            setStyle("-fx-background-color:#ccccff;"+
-                    "-fx-border-color:#696969;"+
-                    "-fx-border-width:2;");
-            if (newValue){
-                setStyle("-fx-background-color:#ccccff;"+
-                        "-fx-border-color:#ff6600;"+
-                        "-fx-border-width:2;");
-            }
-        }));
     }
     public void setVal(SimpleIntegerProperty val) {
         this.val.bind(val);

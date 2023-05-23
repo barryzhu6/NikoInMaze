@@ -14,16 +14,14 @@ output: pdf_document
 - 使用命令行启动请先进入目录`target`，**请不要使用您的系统已有的java环境**，建议的命令如下所示：
 ```shell
 cd .\\target\\
-.\\app\\bin\\java -cp ".\\classes\\" edu.dsbbproj.nikoinmaze.Main gui
-.\\app\\bin\\java -cp ".\\classes\\" edu.dsbbproj.nikoinmaze.Main terminal
+.\\app\\bin\\java edu.dsbbproj.nikoinmaze.Main gui
+.\\app\\bin\\java edu.dsbbproj.nikoinmaze.Main terminal
 ```
-由于没有编译环境，暂时无法提供`Linux`或`Mac OS X`的`jlink`运行时，如有需要请使用`jdk 11`及以上版本，并下载`openjfx`，配置好`module`路径再运行。大小超过 $50\times50$ 的迷宫不建议使用`GUI`运行，此时的格子已经很小，不适合人眼观察。
-若是不使用`GUI`，理论上也可以在老版本的`JRE`上运行，并无需被配置相关模块。同时大型迷宫也建议使用重定向进行输入，不然真是太折磨了。程序严格使用标准输入输出，可以放心使用重定向。
-同时我们也制作了随机生成可解输入，他们有自己的主程序，通过类似的方式使用：
+由于没有编译环境，暂时无法提供`Linux`或`Mac OS X`的`jlink`运行时。运行时在`Windows 11 x64`下制作，在相近版本的`x64`系统下应当都能运行，且`app.zip`中实际上已经包含了所有的类。而`target`目录下也存放了类文件，若是能配置好`openjfx`，也能使用本地的`JRE`运行，而`terminal`模式是可以直接运行的，无需另外配置。若是无法使用预配好的运行时，也无法使用类文件，也可以直接打开工程用IDE直接运行。大小超过 $50\times50$ 的迷宫不建议使用`GUI`运行，此时的格子已经很小，不适合人眼观察。当然这个要根据屏幕大小变化，经过实测在27英寸`2560*1440`的屏幕上刚好能看清$100\times100$的迷宫。同时大型迷宫也建议使用重定向进行输入，不然真是太折磨了。程序严格使用标准输入输出，可以放心使用重定向。我们也制作了随机生成可解输入，他们有自己的主程序，通过类似的方式使用：
 ```shell
-.\\app\\bin\\java -cp ".\\classes\\" edu.dsbbproj.nikoinmaze.generateMaze 
+.\\app\\bin\\java edu.dsbbproj.nikoinmaze.generateMaze 
     > yourpath\\test.txt
-.\\app\\bin\\java -cp ".\\classes\\" edu.dsbbproj.nikoinmaze.generateMazeIntensive 
+.\\app\\bin\\java edu.dsbbproj.nikoinmaze.generateMazeIntensive 
     > yourpath\\test.txt
 ```
 程序并不是并行的，对于 $500\times500$ 以上的迷宫生成十分缓慢，若是想要体验请一定耐心等待。
@@ -65,7 +63,7 @@ Set<Point> closedSet = new HashSet<>();
 
 Input:
 ```shell
-.\\app\\bin\\java -cp ".\\classes\\" edu.dsbbproj.nikoinmaze.Main terminal
+.\\app\\bin\\java edu.dsbbproj.nikoinmaze.Main terminal
 5 6 20
 0 1 0 0 0 0
 0 1 0 1 0 0
@@ -86,3 +84,6 @@ Output:
 2 1 3 0 4 1 4 2 4 3 4 4 4 5
 3 0 4 1 4 2 4 3 4 4 4 5
 ```
+
+![alt text](.\pic\fig1.png "Figure 1")
+![alt text](.\pic\fig2.png "Figure 2")
