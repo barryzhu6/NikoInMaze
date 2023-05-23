@@ -2,8 +2,6 @@ package edu.dsbbproj.nikoinmaze;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -23,7 +21,6 @@ import javafx.stage.Stage;
 import java.util.List;
 
 public class MazeApplication extends Application {
-    private static MazeApplication instance;
     private SimpleIntegerProperty[][] mazeBind;
     private ARAStarMazeSolver solver;
 
@@ -61,10 +58,8 @@ public class MazeApplication extends Application {
     }
     @Override
     public void start(Stage primaryStage) throws Exception {
-        instance = this;
         AnchorPane root = new AnchorPane();
         Scene MainScene = new Scene(root, Paint.valueOf("#FFFFFF00"));
-        DoubleProperty titleSize = new SimpleDoubleProperty(10.0);
 
         primaryStage.setScene(MainScene);
         primaryStage.setHeight(720);
@@ -162,7 +157,7 @@ public class MazeApplication extends Application {
                 setMazeBind(maze.getMaze());
                 Point start = new Point(maze.getX(), maze.getY());
                 List<Point> path = solver.findPath(start, end);
-                Boolean bool = maze.answerKunGui();
+                boolean bool = maze.answerKunGui();
                 if (path.size() > 1) {
                     start = new Point(path.get(1).x, path.get(1).y);
                     maze.move(start.x, start.y);
@@ -177,10 +172,6 @@ public class MazeApplication extends Application {
                 if(bool) break;
             }
         });
-    }
-
-    public static MazeApplication getInstance() {
-        return instance;
     }
 
 }
