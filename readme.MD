@@ -85,5 +85,5 @@ Output:
 3 0 4 1 4 2 4 3 4 4 4 5
 ```
 
-![alt text](.\\pic\\fig1.png "Figure 1")
-![alt text](.\\pic\\fig2.png "Figure 2")
+![alt text](https://github.com/SapphireSage/NikoInMaze/blob/main/pic/fig1.png)
+![alt text](https://github.com/SapphireSage/NikoInMaze/blob/main/pic/fig2.png)
