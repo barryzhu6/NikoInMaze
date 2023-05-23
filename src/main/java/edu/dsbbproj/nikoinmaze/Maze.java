@@ -31,9 +31,9 @@ class Point {
 
 public class Maze {
     private class MagicAttack {
-        private int x;
-        private int y;
-        private int t;
+        private final int x;
+        private final int y;
+        private final int t;
         public MagicAttack(int t, int x, int y) {
             this.t = t;
             this.x = x;

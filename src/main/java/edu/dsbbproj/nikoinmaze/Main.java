@@ -1,7 +1,6 @@
 package edu.dsbbproj.nikoinmaze;
 
 import javafx.application.Application;
-import javafx.stage.Stage;
 
 import java.util.List;
 import java.util.Locale;

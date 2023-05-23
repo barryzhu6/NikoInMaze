@@ -2,7 +2,9 @@ package edu.dsbbproj.nikoinmaze;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.beans.property.*;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;

@@ -1,11 +1,9 @@
 package edu.dsbbproj.nikoinmaze;
 
-import javafx.animation.*;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.concurrent.Task;
 import javafx.scene.Scene;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.Light;
@@ -14,7 +12,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.util.Duration;
 
 public class mPane extends AnchorPane {
     private final SimpleIntegerProperty val;

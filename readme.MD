@@ -1,6 +1,5 @@
 ---
 title: "DSBB Project 说明文档"
-author: 范王卓 12211942 朱纪恺 12012227 赵栩达 12010325
 date: 2023/5
 geometry: margin=3cm
 output: pdf_document
